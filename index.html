@@ -29,9 +29,14 @@
 </iframe>
   <iframe class='iframe1' scrolling='no' title='jZbLgO' src='//codepen.io/zxcxz/embed/jZbLgO/?height=265&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/zxcxz/pen/jZbLgO/'>jZbLgO</a> by zxc (<a href='https://codepen.io/zxcxz'>@zxcxz</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+  document.write(...)
   <iframe class='iframe2' id=output></iframe>
+  src=md_test.html
   <iframe class='iframe2' id=output2 src='md_test.html'></iframe>
+  srcdoc=html
   <iframe class='iframe2' id=output3></iframe>
+  src='data:text/html;charset=utf-8,' + encodeURI(html);
+  <iframe class='iframe2' id=output4></iframe>
   <script>
     const html = `
 <textarea style='width: 100%' rows="5"></textarea>
@@ -73,6 +78,7 @@
     iframe.contentDocument.write(html)
     iframe.contentDocument.close();
     document.querySelector('#output3').srcdoc=html
+    document.querySelector('#output3').src='data:text/html;charset=utf-8,' + encodeURI(html);
   </script>
 </body>
 </html>
