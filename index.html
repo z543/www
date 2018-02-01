@@ -29,13 +29,13 @@
 </iframe><br>
   <iframe class='iframe1' scrolling='no' title='jZbLgO' src='//codepen.io/zxcxz/embed/jZbLgO/?height=265&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/zxcxz/pen/jZbLgO/'>jZbLgO</a> by zxc (<a href='https://codepen.io/zxcxz'>@zxcxz</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe><br>
-  document.write(...)
+  document.write(...)<br>
   <iframe class='iframe2' id=output></iframe><br>
-  src=md_test.html
+  src=md_test.html<br>
   <iframe class='iframe2' id=output2 src='md_test.html'></iframe><br>
-  srcdoc=html
+  srcdoc=html<br>
   <iframe class='iframe2' id=output3></iframe><br>
-  src='data:...';
+  src='data:...';<br>
   <iframe class='iframe2' id=output4></iframe><br>
   <script>
     const html = `
@@ -78,7 +78,7 @@
     iframe.contentDocument.write(html)
     iframe.contentDocument.close();
     document.querySelector('#output3').srcdoc=html
-    document.querySelector('#output3').src='data:text/html;charset=utf-8,' + encodeURI(html);
+    document.querySelector('#output4').src='data:text/html;charset=utf-8,' + encodeURI(html);
   </script>
 </body>
 </html>
