@@ -90,11 +90,15 @@
 </ul>
 <p><strong>注意：</strong>這份文件是用Markdown寫的，你可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md">看看它的原始檔</a> 。</p>
 `
-    var iframes = [document.querySelector('#output0') ,document.querySelector('#output1')]
+    var iframes = [document.querySelector('#output0'), document.querySelector('#output1')]
     iframes.forEach(iframe => {
-      iframe.contentDocument.open();
-      iframe.contentDocument.write(html)
-      iframe.contentDocument.close();
+      try {
+        var doc = iframe.contentDocument
+        iframe.contentDocument.open();
+        iframe.contentDocument.write(html)
+        iframe.contentDocument.close();
+      } catch (error) {
+      }
     })
     document.querySelector('#output3').srcdoc = html
     document.querySelector('#output4').src = 'data:text/html;charset=utf-8,' + encodeURI(html);
