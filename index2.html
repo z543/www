@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    .iframe1 {
+      position: relative;
+      width: 60%;
+      height: 300px;
+    }
+
+    .iframe2 {
+      position: relative;
+      width: 60%;
+      height: 1000px;
+    }
+  </style>
+</head>
+
+<body>
+  Hello World!!!
+
+  <!--   <img src="http://markdown.tw/images/208x128.png" alt="Markdown" title="">  -->
+  <img src="https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png" alt="Google 1" height="44"
+    width="120">
+  <img src="https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png" alt="Google 2" height="44"
+    width="120">
+  <br>
+  <!--   <iframe class='iframe1' src="//jsfiddle.net/ozt54dxq/embedded/html,result/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe> -->
+  <iframe class='iframe1' scrolling='no' title='jZbLgO' src='//codepen.io/zxcxz/embed/jZbLgO/?height=265&theme-id=dark&default-tab=html,result&embed-version=2'
+    frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen
+    <a href='https://codepen.io/zxcxz/pen/jZbLgO/'>jZbLgO</a> by zxc (
+    <a href='https://codepen.io/zxcxz'>@zxcxz</a>) on
+    <a href='https://codepen.io'>CodePen</a>.
+  </iframe>
+  <br>
+  <br> document.write(...)
+  <br>
+  <iframe class='iframe2' title='document_write(...)' id=output0></iframe>
+  <br>
+  <br> document.write(...) + sandbox
+  <br>
+  <iframe class='iframe2' title='sandbox, document_write(...)' id=output1 sandbox></iframe>
+  <br> src=md_test.html
+  <br>
+  <iframe class='iframe2' title='src=me_test.html' id=output2 src='md_test.html'></iframe>
+  <br> srcdoc=html
+  <br>
+  <iframe class='iframe2' title='srcdoc=html' id=output3></iframe>
+  <br> src='data:...';
+  <br>
+  <iframe class='iframe2' title='src=data:...' id=output4></iframe>
+  <br>
+  <script>
+    const html = `
+<textarea style='width: 100%' rows="5"></textarea>
+<h1>Markdown: Syntax</h1>
+<ul>
+<li><a href="#overview">概述</a>
+<ul>
+<li><a href="#philosophy">哲學</a></li>
+<li><a href="#html">行內 HTML</a></li>
+<li><a href="#autoescape">特殊字元自動轉換</a></li>
+</ul></li>
+<li><a href="#block">區塊元素</a>
+<ul>
+<li><a href="#p">段落和換行</a></li>
+<li><a href="#header">標題</a></li>
+<li><a href="#blockquote">區塊引言</a></li>
+<li><a href="#list">清單</a></li>
+<li><a href="#precode">程式碼區塊</a></li>
+<li><a href="#hr">分隔線</a></li>
+</ul></li>
+<li><a href="#span">區段元素</a>
+<ul>
+<li><a href="#link">連結</a></li>
+<li><a href="#em">強調</a></li>
+<li><a href="#code">程式碼</a></li>
+<li><a href="#img">圖片</a></li>
+</ul></li>
+<li><a href="#misc">其他</a>
+<ul>
+<li><a href="#backslash">跳脫字元</a></li>
+<li><a href="#autolink">自動連結</a></li>
+</ul></li>
+<li><a href="#acknowledgement">感謝</a></li>
+</ul>
+<p><strong>注意：</strong>這份文件是用Markdown寫的，你可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md">看看它的原始檔</a> 。</p>
+`
+    var iframes = [document.querySelector('#output0') ,document.querySelector('#output1')]
+    iframes.forEach(iframe => {
+      iframe.contentDocument.open();
+      iframe.contentDocument.write(html)
+      iframe.contentDocument.close();
+    })
+    document.querySelector('#output3').srcdoc = html
+    document.querySelector('#output4').src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+  </script>
+</body>
+
+</html>
